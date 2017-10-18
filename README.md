@@ -82,7 +82,14 @@ COMPILATION:
 
 -> To copy files to Galileo board type in host terminal:
 
- scp /home/vishva/FIFO_Driver/user_prog root@192.168.1.100:/home/vishva (only an example use your user name and corresponding path name)
+ scp /home/vishva/FIFO_Driver/user_prog.o root@192.168.1.100:/home/vishva (only an example use your user name and corresponding path name)
+ 
+ scp /home/vishva/FIFO_Driver/squeue.ko root@192.168.1.100:/home/vishva
+ 
+ -> Now in screen terminal, go to the directory where we copied the object files and type:
+ 
+ insmod squeue.ko
+ 
 _______________________________________________________________________________________________________________________________________________________________________________________________________
 
 EXECUTION:
