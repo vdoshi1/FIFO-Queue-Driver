@@ -47,7 +47,7 @@ SETUP:
 
 ->You are required to know the CPU clock speed(or clock frequency) of your processor in Giga-Hertz for accurate time calculations. To know that you can type in terminal:
 
-cat /proc/cpuinfo
+           sudo cat /proc/cpuinfo
 
 -> If your SDK is installed in other location than default one, change the path accordingly in makefile.
 
@@ -63,14 +63,14 @@ cat /proc/cpuinfo
 
 -> Connect ethernet cable and choose board ip address 192.168.1.100 and host ip address 192.168.1.105 (last number can be any from 0-255 but different from Host's number) by typing:
 
-ifconfig enp2s0 192.168.1.105 netmask 255.255.0.0 up (on host terminal)
+           ifconfig enp2s0 192.168.1.105 netmask 255.255.0.0 up (on host terminal)
 
-ifconfig enp0s20f6 192.168.1.100 netmask 255.255.0.0 up (on screen terminal)
+           ifconfig enp0s20f6 192.168.1.100 netmask 255.255.0.0 up (on screen terminal)
 
 -> You are required to know the /dev/input/event# number corresponding to mouse in board(generally event2 or event3). For that in screen terminal type:
 
-cd /dev/input
-ls by-path 
+           cd /dev/input
+           ls by-path 
 
 and note the event number corresponding to mouse event and change the path in mDevice variable Queue.h library accordingly.
 
@@ -82,13 +82,13 @@ COMPILATION:
 
 -> To copy files to Galileo board type in host terminal:
 
- scp /home/vishva/FIFO_Driver/user_prog.o root@192.168.1.100:/home/vishva (only an example use your user name and corresponding path name)
+           scp /home/vishva/FIFO_Driver/user_prog.o root@192.168.1.100:/home/vishva (only an example use your user name and corresponding path name)
  
- scp /home/vishva/FIFO_Driver/squeue.ko root@192.168.1.100:/home/vishva
+           scp /home/vishva/FIFO_Driver/squeue.ko root@192.168.1.100:/home/vishva
  
  -> Now in screen terminal, go to the directory where we copied the object files and type:
  
- insmod squeue.ko
+           insmod squeue.ko
  
 _______________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -96,7 +96,7 @@ EXECUTION:
 
 ->In screen terminal type:
 
- ./user_prog
+           ./user_prog
 
  to run the code
 _______________________________________________________________________________________________________________________________________________________________________________________________________
